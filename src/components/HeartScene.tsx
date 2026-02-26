@@ -55,11 +55,11 @@ const HeartScene: React.FC<HeartSceneProps> = ({
         const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
         scene.add(ambientLight);
 
-        const keyLight = new THREE.DirectionalLight(0xfffaeb, 2.5);
+        const keyLight = new THREE.DirectionalLight(0xffffff, 2.5);
         keyLight.position.set(-6, 8, 8);
         scene.add(keyLight);
 
-        const fillLight = new THREE.DirectionalLight(0xbbeeff, 1.8);
+        const fillLight = new THREE.DirectionalLight(0xffffff, 1.8);
         fillLight.position.set(6, 2, 4);
         scene.add(fillLight);
 
@@ -78,7 +78,7 @@ const HeartScene: React.FC<HeartSceneProps> = ({
             (gltf) => {
                 const model = gltf.scene;
                 // Center and scale the model
-                model.scale.set(3.0, 3.0, 3.0);
+                model.scale.set(2.7, 2.7, 2.7);
                 model.position.set(0, -1.0, 0);
 
                 // Enhance materials
@@ -168,7 +168,7 @@ const HeartScene: React.FC<HeartSceneProps> = ({
                     console.log(`MAPPED COORDINATE: [${localPoint.x.toFixed(3)}, ${localPoint.y.toFixed(3)}, ${localPoint.z.toFixed(3)}]`);
                     const d = document.createElement('div');
                     d.className = 'debug-coord';
-                    d.innerText = `[${localPoint.x.toFixed(2)}, ${localPoint.y.toFixed(2)}, ${localPoint.z.toFixed(2)}]`;
+                    d.innerText = `[${localPoint.x.toFixed(3)}, ${localPoint.y.toFixed(3)}, ${localPoint.z.toFixed(3)}]`;
                     d.style.position = 'absolute';
                     d.style.top = '10px';
                     d.style.left = '10px';
@@ -176,7 +176,9 @@ const HeartScene: React.FC<HeartSceneProps> = ({
                     d.style.color = 'lime';
                     d.style.zIndex = '9999';
                     d.style.padding = '5px';
+                    d.style.pointerEvents = 'none'; // so we can click repeatedly
                     document.body.appendChild(d);
+                    setTimeout(() => { if (d.parentNode) d.parentNode.removeChild(d); }, 3000);
                 }
             }
         };

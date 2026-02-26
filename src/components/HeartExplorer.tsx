@@ -35,7 +35,7 @@ const HeartExplorer: React.FC = () => {
     const hoveredData = hoveredRegion ? HEART_REGIONS.find(r => r.id === hoveredRegion) : null;
 
     return (
-        <div className="relative w-screen h-screen overflow-hidden bg-background text-foreground">
+        <div className="relative w-screen h-screen overflow-hidden text-foreground">
             {!loaded && <LoadingScreen progress={loadProgress} />}
 
             <div className="absolute inset-0">
@@ -113,12 +113,12 @@ const HeartExplorer: React.FC = () => {
                                                 </ul>
                                             </div>
 
-                                            <div className="bg-amber-50 rounded-xl p-3 w-full border border-amber-100/50">
-                                                <div className="flex items-center gap-1.5 mb-1 text-amber-600">
+                                            <div className="bg-slate-50 rounded-xl p-3 w-full border border-slate-200/50">
+                                                <div className="flex items-center gap-1.5 mb-1 text-slate-600">
                                                     <Lightbulb size={12} />
                                                     <span className="text-[10px] font-bold uppercase tracking-wider">Interesting Fact</span>
                                                 </div>
-                                                <p className="text-xs text-amber-800/80 leading-relaxed font-medium">{selectedData.facts[0]}</p>
+                                                <p className="text-xs text-slate-700/80 leading-relaxed font-medium">{selectedData.facts[0]}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -154,7 +154,7 @@ const HeartExplorer: React.FC = () => {
             <div className="absolute top-4 right-4 md:top-6 md:right-6 z-10 flex flex-col sm:flex-row items-end sm:items-center gap-2 md:gap-3">
 
                 <div className="flex items-center gap-1.5 md:gap-2 px-2.5 py-1.5 md:px-3 md:py-2 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)] border border-slate-200/60" style={{ background: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(12px)' }}>
-                    <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full animate-pulse flex-shrink-0" style={{ background: '#ef4444' }} />
+                    <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full animate-pulse flex-shrink-0" style={{ background: '#64748b' }} />
                     <span className="text-xs md:text-sm font-bold text-slate-600">60 BPM</span>
                 </div>
             </div>
@@ -206,7 +206,7 @@ const HeartExplorer: React.FC = () => {
                             border: '1px solid rgba(226,232,240,0.8)'
                         }}
                     >
-                        <Activity size={16} className="text-red-500" />
+                        <Activity size={16} className="text-slate-500" />
                         Drag to rotate · Scroll to zoom · Click a region to explore
                     </div>
                 </div>

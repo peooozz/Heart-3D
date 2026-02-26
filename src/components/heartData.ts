@@ -13,10 +13,10 @@ export interface HeartRegion {
   isInner?: boolean;
 }
 
-const MUSCLE_COLOR = '#a63c3c'; // Dark red
-const AORTA_COLOR = '#d94c4c'; // Brighter red
-const VEIN_COLOR = '#3c5aa6'; // Blue
-const FAT_COLOR = '#d9b34c'; // Yellowish
+const MUSCLE_COLOR = '#475569'; // slate-600
+const AORTA_COLOR = '#64748b'; // slate-500
+const VEIN_COLOR = '#94a3b8'; // slate-400
+const FAT_COLOR = '#cbd5e1'; // slate-300
 
 export const HEART_REGIONS: HeartRegion[] = [
   {
